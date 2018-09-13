@@ -41,14 +41,14 @@ from the root of the repository.
 Build Bitcoin Core
 ------------------------
 
-1. Clone the bitcoin source code and cd into `bitcoin`
+1. Clone the Bitcoin Core source code and cd into `bitcoin`
 
         git clone https://github.com/bitcoin/bitcoin
         cd bitcoin
 
-2.  Build bitcoin-core:
+2.  Build Bitcoin Core:
 
-    Configure and build the headless bitcoin binaries as well as the GUI (if Qt is found).
+    Configure and build the headless Bitcoin Core binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
 
@@ -64,12 +64,23 @@ Build Bitcoin Core
 
         make deploy
 
+Disable-wallet mode
+--------------------
+When the intention is to run only a P2P node without a wallet, Bitcoin Core may be compiled in
+disable-wallet mode with:
+
+    ./configure --disable-wallet
+
+In this case there is no dependency on Berkeley DB 4.8.
+
+Mining is also possible in disable-wallet mode using the `getblocktemplate` RPC call.
+
 Running
 -------
 
 Bitcoin Core is now available at `./src/bitcoind`
 
-Before running, it's recommended you create an RPC configuration file.
+Before running, it's recommended that you create an RPC configuration file.
 
     echo -e "rpcuser=bitcoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Bitcoin/bitcoin.conf"
 
