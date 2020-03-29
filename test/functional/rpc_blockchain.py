@@ -49,6 +49,7 @@ class BlockchainTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
+        self.supports_cli = False
 
     def run_test(self):
         self.mine_chain()
@@ -134,7 +135,7 @@ class BlockchainTest(BitcoinTestFramework):
                 'bip9': {
                     'status': 'started',
                     'bit': 28,
-                    'startTime': 0,
+                    'start_time': 0,
                     'timeout': 0x7fffffffffffffff,  # testdummy does not have a timeout so is set to the max int64 value
                     'since': 144,
                     'statistics': {
@@ -186,6 +187,7 @@ class BlockchainTest(BitcoinTestFramework):
         assert_equal(chaintxstats['time'], b200['time'])
         assert_equal(chaintxstats['txcount'], 201)
         assert_equal(chaintxstats['window_final_block_hash'], b200_hash)
+        assert_equal(chaintxstats['window_final_block_height'], 200)
         assert_equal(chaintxstats['window_block_count'], 199)
         assert_equal(chaintxstats['window_tx_count'], 199)
         assert_equal(chaintxstats['window_interval'], time_diff)
@@ -195,6 +197,7 @@ class BlockchainTest(BitcoinTestFramework):
         assert_equal(chaintxstats['time'], b1['time'])
         assert_equal(chaintxstats['txcount'], 2)
         assert_equal(chaintxstats['window_final_block_hash'], b1_hash)
+        assert_equal(chaintxstats['window_final_block_height'], 1)
         assert_equal(chaintxstats['window_block_count'], 0)
         assert 'window_tx_count' not in chaintxstats
         assert 'window_interval' not in chaintxstats

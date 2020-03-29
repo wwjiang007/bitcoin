@@ -145,12 +145,13 @@ def get_rand_amount():
 class ImportRescanTest(BitcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 2 + len(IMPORT_NODES)
+        self.supports_cli = False
 
     def skip_test_if_missing_module(self):
         self.skip_if_no_wallet()
 
     def setup_network(self):
-        self.extra_args = [[]] * self.num_nodes
+        self.extra_args = [[] for _ in range(self.num_nodes)]
         for i, import_node in enumerate(IMPORT_NODES, 2):
             if import_node.prune:
                 self.extra_args[i] += ["-prune=1"]
