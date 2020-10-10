@@ -40,7 +40,6 @@ Rescan = enum.Enum("Rescan", "no yes late_timestamp")
 
 class Variant(collections.namedtuple("Variant", "call data address_type rescan prune")):
     """Helper for importing one key and verifying scanned transactions."""
-
     def do_import(self, timestamp):
         """Call one key import RPC."""
         rescan = self.rescan == Rescan.yes
@@ -146,6 +145,7 @@ class ImportRescanTest(BitcoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 2 + len(IMPORT_NODES)
         self.supports_cli = False
+        self.rpc_timeout = 120
 
     def skip_test_if_missing_module(self):
         self.skip_if_no_wallet()
@@ -160,8 +160,7 @@ class ImportRescanTest(BitcoinTestFramework):
 
         # Import keys with pruning disabled
         self.start_nodes(extra_args=[[]] * self.num_nodes)
-        for n in self.nodes:
-            n.importprivkey(privkey=n.get_deterministic_priv_key().key, label='coinbase')
+        self.import_deterministic_coinbase_privkeys()
         self.stop_nodes()
 
         self.start_nodes()
@@ -225,6 +224,7 @@ class ImportRescanTest(BitcoinTestFramework):
             variant.expected_balance += variant.sent_amount
             variant.expected_txs += 1
             variant.check(variant.sent_txid, variant.sent_amount, variant.confirmation_height)
+
 
 if __name__ == "__main__":
     ImportRescanTest().main()

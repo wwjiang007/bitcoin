@@ -168,6 +168,10 @@
         <translation>Veski dulkóðað</translation>
     </message>
     <message>
+        <source>Wallet to be encrypted</source>
+        <translation>Veski sem á að dulkóða</translation>
+    </message>
+    <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
         <translation>MIKILVÆGT: Nýja dulkóðaða veskisskráin þarf að koma í staðinn fyrir öll fyrri afrit sem þú hefur gert af upprunalegu veskisskránni. Af öryggisástæðum munu öll fyrri afrit af ódulkóðaða veskinu verða óvirk um leið og þú byrjar að nota nýja, dulkóðaða veskið.</translation>
     </message>
@@ -322,14 +326,6 @@
         <translation>Breyta lykilsetningunni sem gildir um dulkóðun veskis</translation>
     </message>
     <message>
-        <source>&amp;Debug window</source>
-        <translation>&amp;Kembunargluggi</translation>
-    </message>
-    <message>
-        <source>Open debugging and diagnostic console</source>
-        <translation>Opna kembunar- og greiningarstjórnborð</translation>
-    </message>
-    <message>
         <source>&amp;Verify message...</source>
         <translation>&amp;Yfirfara skilaboð...</translation>
     </message>
@@ -388,10 +384,6 @@
     <message>
         <source>Show the list of used receiving addresses and labels</source>
         <translation>Sýna færslugildi sem notuð hafa verið til að taka við mynt og merkingar þeirra</translation>
-    </message>
-    <message>
-        <source>Open a bitcoin: URI or payment request</source>
-        <translation>Opna bitcoin: URI eða greiðslubeiðni</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -841,9 +833,6 @@
         <source>&amp;Label:</source>
         <translation>&amp;Merki:</translation>
     </message>
-    </context>
-<context>
-    <name>SendConfirmationDialog</name>
     </context>
 <context>
     <name>ShutdownWindow</name>

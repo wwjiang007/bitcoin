@@ -25,13 +25,12 @@ class TxnMallTest(BitcoinTestFramework):
         parser.add_argument("--mineblock", dest="mine_block", default=False, action="store_true",
                             help="Test double-spend of 1-confirmed transaction")
         parser.add_argument("--segwit", dest="segwit", default=False, action="store_true",
-                            help="Test behaviour with SegWit txn (which should fail")
+                            help="Test behaviour with SegWit txn (which should fail)")
 
     def setup_network(self):
         # Start with split network:
-        super(TxnMallTest, self).setup_network()
+        super().setup_network()
         disconnect_nodes(self.nodes[1], 2)
-        disconnect_nodes(self.nodes[2], 1)
 
     def run_test(self):
         if self.options.segwit:

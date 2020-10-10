@@ -67,7 +67,11 @@
     </message>
     <message>
         <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Tai yra jūsų Bitcoin adresai išeinantiems mokėjimams. Visada pasitikrinkite sumą ir gavėjo adresą prieš siunčiant lėšas. </translation>
+        <translation>Tai yra jūsų Bitcoin adresai išeinantiems mokėjimams. Visada pasitikrinkite sumą ir gavėjo adresą prieš siunčiant lėšas.</translation>
+    </message>
+    <message>
+        <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <translation>Tai jūsų Bitcoin mokėjimų gavimo adresai. Naudokite 'Sukurti naują gavimo adresą' migtuką gavimų skirtuke kad sukurtumėt nauja adresą.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -132,6 +136,10 @@
         <translation>Pakartokite naują slaptafrazę</translation>
     </message>
     <message>
+        <source>Show passphrase</source>
+        <translation>Rodyti slaptafrazę</translation>
+    </message>
+    <message>
         <source>Encrypt wallet</source>
         <translation>Užšifruoti piniginę</translation>
     </message>
@@ -161,7 +169,7 @@
     </message>
     <message>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
-        <translation>Dėmesio: jei užšifruosite savo piniginę ir pamesite slaptafrazę, jūs&lt;b&gt;PRARASITE VISUS SAVO BITCOINUS&lt;/b&gt;! </translation>
+        <translation>Dėmesio: jei užšifruosite savo piniginę ir pamesite slaptafrazę, jūs&lt;b&gt;PRARASITE VISUS SAVO BITCOINUS&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -172,8 +180,12 @@
         <translation>Piniginė užšifruota</translation>
     </message>
     <message>
+        <source>Enter the old passphrase and new passphrase for the wallet.</source>
+        <translation>Įveskite seną ir naują slaptažodį.</translation>
+    </message>
+    <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
-        <translation>SVARBU: Betkokios ankstesnės jūsų piniginės atsarginės kopijos turėtų būti pakeistos naujai sugeneruotu, užšifruotu piniginės failu. Dėl saugumo sumetimų, anstesnės neužšifruotos piniginės kopijos failas taps nenaudingu nuo momento, kai nauja ir užšifruota piniginė bus pradėta naudoti. </translation>
+        <translation>SVARBU: Betkokios ankstesnės jūsų piniginės atsarginės kopijos turėtų būti pakeistos naujai sugeneruotu, užšifruotu piniginės failu. Dėl saugumo sumetimų, anstesnės neužšifruotos piniginės kopijos failas taps nenaudingu nuo momento, kai nauja ir užšifruota piniginė bus pradėta naudoti.</translation>
     </message>
     <message>
         <source>Wallet encryption failed</source>
@@ -294,6 +306,14 @@
         <translation>Atidaryti &amp;URI...</translation>
     </message>
     <message>
+        <source>Create Wallet...</source>
+        <translation>Sukurti piniginę...</translation>
+    </message>
+    <message>
+        <source>Create a new wallet</source>
+        <translation>Sukurti naują piniginę</translation>
+    </message>
+    <message>
         <source>Wallet:</source>
         <translation>Piniginė</translation>
     </message>
@@ -334,14 +354,6 @@
         <translation>Pakeisti slaptafrazę naudojamą piniginės užšifravimui</translation>
     </message>
     <message>
-        <source>&amp;Debug window</source>
-        <translation>&amp;Derinimo langas</translation>
-    </message>
-    <message>
-        <source>Open debugging and diagnostic console</source>
-        <translation>Atverti derinimo ir diagnostikos konsolę</translation>
-    </message>
-    <message>
         <source>&amp;Verify message...</source>
         <translation>&amp;Tikrinti žinutę...</translation>
     </message>
@@ -367,7 +379,7 @@
     </message>
     <message>
         <source>Sign messages with your Bitcoin addresses to prove you own them</source>
-        <translation>Pasirašydami žinutes su savo Bitcoin adresais įrodysite jog esate jų savininkas </translation>
+        <translation>Pasirašydami žinutes su savo Bitcoin adresais įrodysite jog esate jų savininkas</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
@@ -402,10 +414,6 @@
         <translation>Rodyti sąrašą panaudotų gavimo adresų ir žymių</translation>
     </message>
     <message>
-        <source>Open a bitcoin: URI or payment request</source>
-        <translation>Atidaryti bitcoin: URI ar apmokėjimo reikalavimą</translation>
-    </message>
-    <message>
         <source>&amp;Command-line options</source>
         <translation>Komandinės eilutės parametrai</translation>
     </message>
@@ -435,7 +443,7 @@
     </message>
     <message>
         <source>Transactions after this will not yet be visible.</source>
-        <translation>Sekančios operacijos dar nebus matomos. </translation>
+        <translation>Sekančios operacijos dar nebus matomos.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -486,6 +494,10 @@
         <translation>numatyta piniginė</translation>
     </message>
     <message>
+        <source>No wallets available</source>
+        <translation>Piniginių nėra</translation>
+    </message>
+    <message>
         <source>&amp;Window</source>
         <translation>&amp;Langas</translation>
     </message>
@@ -516,6 +528,10 @@
     <message>
         <source>Error: %1</source>
         <translation>Klaida: %1</translation>
+    </message>
+    <message>
+        <source>Warning: %1</source>
+        <translation>Įspėjimas: %1</translation>
     </message>
     <message>
         <source>Date: %1
@@ -739,10 +755,50 @@
 </context>
 <context>
     <name>CreateWalletActivity</name>
-    </context>
+    <message>
+        <source>Creating Wallet &lt;b&gt;%1&lt;/b&gt;...</source>
+        <translation>Sukuriama Piniginė &lt;b&gt;%1&lt;/b&gt;...</translation>
+    </message>
+    <message>
+        <source>Create wallet failed</source>
+        <translation>Piniginės sukurimas nepavyko</translation>
+    </message>
+    <message>
+        <source>Create wallet warning</source>
+        <translation>Piniginės sukurimo įspėjimas</translation>
+    </message>
+</context>
 <context>
     <name>CreateWalletDialog</name>
-    </context>
+    <message>
+        <source>Create Wallet</source>
+        <translation>Sukurti Piniginę</translation>
+    </message>
+    <message>
+        <source>Wallet Name</source>
+        <translation>Piniginės Pavadinimas</translation>
+    </message>
+    <message>
+        <source>Encrypt the wallet. The wallet will be encrypted with a passphrase of your choice.</source>
+        <translation>Užkoduoti piniginę. Piniginė bus užkoduota jūsų pasirinkta slapta fraze.</translation>
+    </message>
+    <message>
+        <source>Encrypt Wallet</source>
+        <translation>Užkoduoti Piniginę</translation>
+    </message>
+    <message>
+        <source>Disable Private Keys</source>
+        <translation>Atjungti Privačius Raktus</translation>
+    </message>
+    <message>
+        <source>Make Blank Wallet</source>
+        <translation>Sukurti Tuščia Piniginę</translation>
+    </message>
+    <message>
+        <source>Create</source>
+        <translation>Sukurti</translation>
+    </message>
+</context>
 <context>
     <name>EditAddressDialog</name>
     <message>
@@ -828,10 +884,6 @@
         <translation>versija</translation>
     </message>
     <message>
-        <source>(%1-bit)</source>
-        <translation>(%1-bit)</translation>
-    </message>
-    <message>
         <source>About %1</source>
         <translation>&amp;Apie %1</translation>
     </message>
@@ -877,6 +929,10 @@
     <message>
         <source>Bitcoin</source>
         <translation>Bitcoin</translation>
+    </message>
+    <message>
+        <source>Discard blocks after verification, except most recent %1 GB (prune)</source>
+        <translation>Ištrinti blokus po patikrinimo, išskyrus paskutinius %1 GB (nukarpimas)</translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
@@ -965,28 +1021,20 @@
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open URI</source>
-        <translation>Atidaryti URI</translation>
-    </message>
-    <message>
-        <source>Open payment request from URI or file</source>
-        <translation>Atidaryti mokėjimo užklausą iš URI arba failo</translation>
-    </message>
-    <message>
         <source>URI:</source>
         <translation>URI:</translation>
-    </message>
-    <message>
-        <source>Select payment request file</source>
-        <translation>Pasirinkite mokėjimo užklausos failą</translation>
-    </message>
-    <message>
-        <source>Select payment request file to open</source>
-        <translation>Pasirinkite mokėjimo užklausos failą</translation>
     </message>
 </context>
 <context>
     <name>OpenWalletActivity</name>
+    <message>
+        <source>Open wallet failed</source>
+        <translation>Piniginės atidarymas nepavyko</translation>
+    </message>
+    <message>
+        <source>Open wallet warning</source>
+        <translation>Piniginės atidarymo įspėjimas</translation>
+    </message>
     <message>
         <source>default wallet</source>
         <translation>numatyta piniginė</translation>
@@ -1365,18 +1413,6 @@
         <translation>„bitcoin: //“ nėra galiojantis URI. Vietoj to naudokite „bitcoin:“.</translation>
     </message>
     <message>
-        <source>You are using a BIP70 URL which will be unsupported in the future.</source>
-        <translation>Jūs naudojate BIP70 URL, kuris ateityje nebus palaikomas.</translation>
-    </message>
-    <message>
-        <source>Payment request fetch URL is invalid: %1</source>
-        <translation>Mokėjimo užklausos atsiuntimo URL neteisingas: %1</translation>
-    </message>
-    <message>
-        <source>Cannot process payment request because BIP70 support was not compiled in.</source>
-        <translation>Nepavyksta apdoroti mokėjimo užklausos, nes „BIP70“ pagalba nebuvo surinkta.</translation>
-    </message>
-    <message>
         <source>Invalid payment address %1</source>
         <translation>Neteisingas mokėjimo adresas %1</translation>
     </message>
@@ -1387,66 +1423,6 @@
     <message>
         <source>Payment request file handling</source>
         <translation>Mokėjimo užklausos failų tvarkymas</translation>
-    </message>
-    <message>
-        <source>Payment request file cannot be read! This can be caused by an invalid payment request file.</source>
-        <translation>Mokėjimo užklausos failo negalima skaityti! Tai gali sukelti neteisingas mokėjimo užklausos failas.</translation>
-    </message>
-    <message>
-        <source>Payment request rejected</source>
-        <translation>Mokėjimo prašymas atmestas</translation>
-    </message>
-    <message>
-        <source>Payment request network doesn't match client network.</source>
-        <translation>Mokėjimo užklausų tinklas neatitinka klientų tinklo.</translation>
-    </message>
-    <message>
-        <source>Payment request expired.</source>
-        <translation>Mokėjimo prašymas pasibaigė</translation>
-    </message>
-    <message>
-        <source>Payment request is not initialized.</source>
-        <translation>Mokėjimo prašymas nėra inicijuotas.</translation>
-    </message>
-    <message>
-        <source>Unverified payment requests to custom payment scripts are unsupported.</source>
-        <translation>Nepatvirtinti mokėjimo prašymai pagal individualius mokėjimo scenarijus nepalaikomi.</translation>
-    </message>
-    <message>
-        <source>Invalid payment request.</source>
-        <translation>Neteisingas mokėjimo prašymas.</translation>
-    </message>
-    <message>
-        <source>Requested payment amount of %1 is too small (considered dust).</source>
-        <translation>Prašoma %1 mokėjimo suma yra per maža (laikoma kaip dulkės).</translation>
-    </message>
-    <message>
-        <source>Refund from %1</source>
-        <translation>Grąžinimas iš %1</translation>
-    </message>
-    <message>
-        <source>Payment request %1 is too large (%2 bytes, allowed %3 bytes).</source>
-        <translation>Mokėjimo užklausa %1 yra per didelė (%2 baitai, leidžiama %3 baitų).</translation>
-    </message>
-    <message>
-        <source>Error communicating with %1: %2</source>
-        <translation>Ryšio klaida su %1: %2</translation>
-    </message>
-    <message>
-        <source>Payment request cannot be parsed!</source>
-        <translation>Mokėjimo užklausos negalima perskaityti!</translation>
-    </message>
-    <message>
-        <source>Bad response from server %1</source>
-        <translation>Blogas atsakymas iš serverio %1</translation>
-    </message>
-    <message>
-        <source>Network request error</source>
-        <translation>Tinklo užklausos klaida</translation>
-    </message>
-    <message>
-        <source>Payment acknowledged</source>
-        <translation>Mokėjimas patvirtintas</translation>
     </message>
 </context>
 <context>
@@ -1598,6 +1574,10 @@
         <translation>Klaida koduojant URI į QR kodą.</translation>
     </message>
     <message>
+        <source>QR code support not available.</source>
+        <translation>QR kodas nepalaikomas</translation>
+    </message>
+    <message>
         <source>Save QR Code</source>
         <translation>Įrašyti QR kodą</translation>
     </message>
@@ -1619,10 +1599,6 @@
     <message>
         <source>&amp;Information</source>
         <translation>&amp;Informacija</translation>
-    </message>
-    <message>
-        <source>Debug window</source>
-        <translation>Derinimo langas</translation>
     </message>
     <message>
         <source>General</source>
@@ -2161,10 +2137,6 @@
         <translation>Įspėjimas: šiuo metu neįmanoma apskaičiuoti mokesčio.</translation>
     </message>
     <message>
-        <source>collapse fee-settings</source>
-        <translation>sumažinti mokesčio nustatymus</translation>
-    </message>
-    <message>
         <source>Specify a custom fee per kB (1,000 bytes) of the transaction's virtual size.
 
 Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis per kB" for a transaction size of 500 bytes (half of 1 kB) would ultimately yield a fee of only 50 satoshis.</source>
@@ -2277,6 +2249,14 @@ Pastaba: Kadangi mokestis apskaičiuojamas pagal baitą, mokestis už „100 sat
         <translation>%1 (%2 blokai)</translation>
     </message>
     <message>
+        <source> from wallet '%1'</source>
+        <translation>iš piniginės '%1'</translation>
+    </message>
+    <message>
+        <source>%1 to '%2'</source>
+        <translation>'%1' į '%2'</translation>
+    </message>
+    <message>
         <source>%1 to %2</source>
         <translation>%1 iki %2</translation>
     </message>
@@ -2333,10 +2313,6 @@ Pastaba: Kadangi mokestis apskaičiuojamas pagal baitą, mokestis už „100 sat
         <translation>Sandorio sudarymas nepavyko!</translation>
     </message>
     <message>
-        <source>The transaction was rejected with the following reason: %1</source>
-        <translation>Sandoris buvo atmestas dėl šios priežasties: %1</translation>
-    </message>
-    <message>
         <source>A fee higher than %1 is considered an absurdly high fee.</source>
         <translation>Mokestis, didesnis nei %1, laikomas absurdiškai aukštu mokesčiu.</translation>
     </message>
@@ -2386,10 +2362,6 @@ Pastaba: Kadangi mokestis apskaičiuojamas pagal baitą, mokestis už „100 sat
     <message>
         <source>Choose previously used address</source>
         <translation>Pasirinkite anksčiau naudojamą adresą</translation>
-    </message>
-    <message>
-        <source>This is a normal payment.</source>
-        <translation>Tai įprastas mokėjimas.</translation>
     </message>
     <message>
         <source>The Bitcoin address to send the payment to</source>
@@ -2450,17 +2422,6 @@ Pastaba: Kadangi mokestis apskaičiuojamas pagal baitą, mokestis už „100 sat
     <message>
         <source>Memo:</source>
         <translation>Atmintinė:</translation>
-    </message>
-    <message>
-        <source>Enter a label for this address to add it to your address book</source>
-        <translation>Įveskite šio adreso etiketę, kad ją pridėtumėte prie adresų knygos</translation>
-    </message>
-</context>
-<context>
-    <name>SendConfirmationDialog</name>
-    <message>
-        <source>Yes</source>
-        <translation>Taip</translation>
     </message>
 </context>
 <context>
@@ -2715,12 +2676,20 @@ Pastaba: Kadangi mokestis apskaičiuojamas pagal baitą, mokestis už „100 sat
         <translation>Sandorio mokestis</translation>
     </message>
     <message>
+        <source>Net amount</source>
+        <translation>Neto suma</translation>
+    </message>
+    <message>
         <source>Message</source>
         <translation>Žinutė</translation>
     </message>
     <message>
         <source>Comment</source>
         <translation>Komentaras</translation>
+    </message>
+    <message>
+        <source>Transaction ID</source>
+        <translation>Sandorio ID</translation>
     </message>
     <message>
         <source>Merchant</source>
@@ -3037,6 +3006,10 @@ Pastaba: Kadangi mokestis apskaičiuojamas pagal baitą, mokestis už „100 sat
         <source>Close wallet</source>
         <translation>Uždaryti Piniginę</translation>
     </message>
+    <message>
+        <source>Are you sure you wish to close the wallet &lt;i&gt;%1&lt;/i&gt;?</source>
+        <translation>Ar tikrai norite uždaryti piniginę &lt;i&gt;%1&lt;/i&gt;?</translation>
+    </message>
     </context>
 <context>
     <name>WalletFrame</name>
@@ -3210,12 +3183,20 @@ Pastaba: Kadangi mokestis apskaičiuojamas pagal baitą, mokestis už „100 sat
         <translation>Importuojama...</translation>
     </message>
     <message>
+        <source>Unknown address type '%s'</source>
+        <translation>Nežinomas adreso tipas '%s'</translation>
+    </message>
+    <message>
         <source>Upgrading txindex database</source>
         <translation>Txindex duomenų bazės atnaujinimas</translation>
     </message>
     <message>
         <source>Loading P2P addresses...</source>
         <translation>Užkraunami P2P adresai...</translation>
+    </message>
+    <message>
+        <source>Error: Disk space is too low!</source>
+        <translation>Klaida: Diske mažai vietos!</translation>
     </message>
     <message>
         <source>Loading banlist...</source>

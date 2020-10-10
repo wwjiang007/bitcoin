@@ -155,7 +155,7 @@
     </message>
     <message>
         <source>&amp;Address</source>
-        <translation> پتہ</translation>
+        <translation>پتہ</translation>
     </message>
     </context>
 <context>
@@ -261,9 +261,6 @@
     <name>SendCoinsEntry</name>
     </context>
 <context>
-    <name>SendConfirmationDialog</name>
-    </context>
-<context>
     <name>ShutdownWindow</name>
     </context>
 <context>
@@ -299,6 +296,10 @@
     </context>
 <context>
     <name>TransactionView</name>
+    <message>
+        <source>Other</source>
+        <translation>Other</translation>
+    </message>
     <message>
         <source>Comma separated file (*.csv)</source>
         <translation>کاما سے جدا فائلیں (*.csv)</translation>
