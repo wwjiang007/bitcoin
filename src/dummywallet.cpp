@@ -38,9 +38,9 @@ void DummyWalletInit::AddWalletOptions(ArgsManager& argsman) const
         "-paytxfee=<amt>",
         "-rescan",
         "-salvagewallet",
+        "-signer=<cmd>",
         "-spendzeroconfchange",
         "-txconfirmtarget=<n>",
-        "-upgradewallet",
         "-wallet=<path>",
         "-walletbroadcast",
         "-walletdir=<dir>",
@@ -50,6 +50,7 @@ void DummyWalletInit::AddWalletOptions(ArgsManager& argsman) const
         "-flushwallet",
         "-privdb",
         "-walletrejectlongchains",
+        "-unsafesqlitesync",
     });
 }
 

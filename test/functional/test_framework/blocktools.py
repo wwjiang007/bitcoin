@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-# Copyright (c) 2015-2019 The Bitcoin Core developers
+# Copyright (c) 2015-2020 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Utilities for manipulating blocks and transactions."""
 
 from binascii import a2b_hex
-import io
 import struct
 import time
 import unittest
@@ -24,12 +23,11 @@ from .messages import (
     CTxIn,
     CTxInWitness,
     CTxOut,
-    FromHex,
-    ToHex,
     hash256,
     hex_str_to_bytes,
     ser_uint256,
     sha256,
+    tx_from_hex,
     uint256_from_str,
 )
 from .script import (
@@ -45,7 +43,6 @@ from .script import (
     hash160,
 )
 from .util import assert_equal
-from io import BytesIO
 
 WITNESS_SCALE_FACTOR = 4
 MAX_BLOCK_SIGOPS = 20000
@@ -53,6 +50,9 @@ MAX_BLOCK_SIGOPS_WEIGHT = MAX_BLOCK_SIGOPS * WITNESS_SCALE_FACTOR
 
 # Genesis block time (regtest)
 TIME_GENESIS_BLOCK = 1296688602
+
+# Coinbase transaction outputs can only be spent after this number of new blocks (network rule)
+COINBASE_MATURITY = 100
 
 # From BIP141
 WITNESS_COMMITMENT_HEADER = b"\xaa\x21\xa9\xed"
@@ -78,9 +78,7 @@ def create_block(hashprev=None, coinbase=None, ntime=None, *, version=None, tmpl
     if txlist:
         for tx in txlist:
             if not hasattr(tx, 'calc_sha256'):
-                txo = CTransaction()
-                txo.deserialize(io.BytesIO(tx))
-                tx = txo
+                tx = tx_from_hex(tx)
             block.vtx.append(tx)
     block.hashMerkleRoot = block.calc_merkle_root()
     block.calc_sha256()
@@ -119,7 +117,7 @@ def script_BIP34_coinbase_height(height):
     return CScript([CScriptNum(height)])
 
 
-def create_coinbase(height, pubkey=None, extra_output_script=None, fees=0):
+def create_coinbase(height, pubkey=None, extra_output_script=None, fees=0, nValue=50):
     """Create a coinbase transaction.
 
     If pubkey is passed in, the coinbase output will be a P2PK output;
@@ -130,10 +128,11 @@ def create_coinbase(height, pubkey=None, extra_output_script=None, fees=0):
     coinbase = CTransaction()
     coinbase.vin.append(CTxIn(COutPoint(0, 0xffffffff), script_BIP34_coinbase_height(height), 0xffffffff))
     coinbaseoutput = CTxOut()
-    coinbaseoutput.nValue = 50 * COIN
-    halvings = int(height / 150)  # regtest
-    coinbaseoutput.nValue >>= halvings
-    coinbaseoutput.nValue += fees
+    coinbaseoutput.nValue = nValue * COIN
+    if nValue == 50:
+        halvings = int(height / 150)  # regtest
+        coinbaseoutput.nValue >>= halvings
+        coinbaseoutput.nValue += fees
     if pubkey is not None:
         coinbaseoutput.scriptPubKey = CScript([pubkey, OP_CHECKSIG])
     else:
@@ -166,8 +165,7 @@ def create_transaction(node, txid, to_address, *, amount):
         sign for the output that is being spent.
     """
     raw_tx = create_raw_transaction(node, txid, to_address, amount=amount)
-    tx = CTransaction()
-    tx.deserialize(BytesIO(hex_str_to_bytes(raw_tx)))
+    tx = tx_from_hex(raw_tx)
     return tx
 
 def create_raw_transaction(node, txid, to_address, *, amount):
@@ -244,9 +242,9 @@ def send_to_witness(use_p2wsh, node, utxo, pubkey, encode_p2sh, amount, sign=Tru
         return node.sendrawtransaction(signed["hex"])
     else:
         if (insert_redeem_script):
-            tx = FromHex(CTransaction(), tx_to_witness)
+            tx = tx_from_hex(tx_to_witness)
             tx.vin[0].scriptSig += CScript([hex_str_to_bytes(insert_redeem_script)])
-            tx_to_witness = ToHex(tx)
+            tx_to_witness = tx.serialize().hex()
 
     return node.sendrawtransaction(tx_to_witness)
 

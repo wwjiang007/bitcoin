@@ -15,6 +15,7 @@ pkg_add qt5 # (optional for enabling the GUI)
 pkg_add autoconf # (select highest version, e.g. 2.69)
 pkg_add automake # (select highest version, e.g. 1.16)
 pkg_add python # (select highest version, e.g. 3.8)
+pkg_add bash
 
 git clone https://github.com/bitcoin/bitcoin.git
 ```
@@ -89,7 +90,7 @@ To configure with GUI:
 
 Build and run the tests:
 ```bash
-gmake # use -jX here for parallelism
+gmake # use "-j N" here for N parallel jobs
 gmake check
 ```
 
